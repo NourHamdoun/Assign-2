@@ -1,0 +1,48 @@
+---
+title: "Assignment 2"
+author: "Nour Hamdoun"
+output: html_document
+---
+
+##  **Analyzing Rent dataset**   
+_The document of analyzing Rent in Munich in 2003 for 2053 observations with 13 different variables._ 
+
+```{r, echo=F}
+library("catdata")
+data("rent")
+head(rent)
+```
+
+
+```{r,echo=FALSE}
+
+str(rent)
+
+```
+
+
+###  **Summary of some variables of the data sets:** 
+
+```{r, echo=TRUE}
+
+summary("rent$rentm")
+summary("rent$year")
+summary("rent$size")
+summary("rent$area")
+
+
+```
+
+
+###  **histogram plots of some variables of the data sets:** 
+
+```{r, echo=F}
+par(mfrow=c(2,2))
+
+hist(rent$rentm, main = "Rent prices/euros", col = "red", xlab = "Price")
+hist(rent$year, main = "year of construction", col = "Blue", xlab = "Year")
+hist(rent$size, main = "living space/ m^2", col = "purple", xlab = "Space")
+hist(rent$area, main = "municipality", col = "orange", xlab = "Area")
+
+```
+
